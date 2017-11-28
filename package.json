@@ -14,8 +14,14 @@
   },
   "dependencies": {
     "autoprefixer": "^7.1.6",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "node-less": "^1.0.0",
     "nuxt": "^1.0.0-rc11",
-    "postcss-px2rem": "^0.3.0"
+    "postcss-px2rem": "^0.3.0",
+    "url-loader": "^0.5.9",
+    "vue-loader": "^11.3.4",
+    "vue-style-loader": "^3.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
