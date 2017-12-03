@@ -24,27 +24,25 @@
 
 <script>
 import ZwTable from '~/components/Table.vue'
+import axios from 'axios'
+
 export default {
   components: {
     ZwTable
   },
   data() {
     return {
-      list: [
-        {
-          date: '2017-09-15',
-          price: '338.80'
-        },
-        {
-          date: '2017-10-15',
-          price: '355.60'
-        },
-        {
-          date: '2017-11-15',
-          price: '383.00'
-        }
-      ]
+      list: []
     }
+  },
+  methods: {
+    async asyncData () {
+      let {data} = await axios.get(`http://localhost:9933/getList`, {params: {name: 'Tencent'}})
+      this.list = data.list
+    }
+  },
+  created() {
+    this.asyncData()
   }
 }
 </script>
