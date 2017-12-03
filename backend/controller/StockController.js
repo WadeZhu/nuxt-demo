@@ -1,6 +1,10 @@
+const {Stock} = require('../model/')
+
 class StockController {
   static async getStock (ctx) {
-    ctx.body = 'here is your stocks'
+    const {name} = ctx.request.query
+    const list = await Stock.findOne({name})
+    ctx.body = list
   }
 }
 
