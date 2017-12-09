@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <header>Tencent</header>
+    <header>{{name}}</header>
     <div class="table">
       <ZwTable>
         <thead class="thead">
@@ -32,13 +32,15 @@ export default {
   },
   data() {
     return {
+      name: '--*--',
       list: []
     }
   },
   methods: {
     async asyncData () {
-      let {data} = await axios.get(`http://localhost:9933/getList`, {params: {name: 'Tencent'}})
+      let {data} = await axios.get(`http://localhost:9933/stock/getList`, {params: {name: 'Tencent'}})
       this.list = data.list
+      this.name = data.name
     }
   },
   created() {
