@@ -13,7 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js' }
+      { src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js', ssr: true }
     ]
   },
   /*
@@ -24,13 +24,14 @@ module.exports = {
   ** Build configuration
   */
   css: [
-    { src: '~static/reset.css' }
+    { src: '~static/reset.css' },
+    { src: 'element-ui/lib/theme-chalk/index.css' }
   ],
   build: {
     /*
     ** Run ESLint on save
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -41,10 +42,16 @@ module.exports = {
       }
     },
     postcss: [
-      require('postcss-px2rem')({remUnit: 75}),
+      require('postcss-px2rem')({ remUnit: 75 }),
       require('autoprefixer')({
         browsers: ['iOS >= 7', 'Android >= 4.1']
       })
     ]
-  }
+  },
+  vender: [
+    'element-ui', 'axios'
+  ],
+  plugins: [
+    { src: '~plugins/element-ui', ssr: true }
+  ]
 }
