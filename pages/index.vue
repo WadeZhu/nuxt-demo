@@ -20,6 +20,7 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import '~/plugins/element-ui'
 
 export default {
   components: {

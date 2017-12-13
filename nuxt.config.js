@@ -48,10 +48,10 @@ module.exports = {
       })
     ]
   },
+  // plugins: [
+  //   { src: '~plugins/element-ui' }
+  // ],
   vender: [
     'element-ui', 'axios'
-  ],
-  plugins: [
-    { src: '~plugins/element-ui', ssr: true }
   ]
 }
