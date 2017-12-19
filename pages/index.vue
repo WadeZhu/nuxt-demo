@@ -13,7 +13,9 @@
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
       </div>
     </div>
-    <el-button type="primary">主要按钮</el-button>
+    <a href="/stock">
+      <el-button type="primary">主要按钮</el-button>
+    </a>
     <el-button type="primary" icon="el-icon-edit"></el-button>
   </section>
 </template>
@@ -21,7 +23,7 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import '~/plugins/element-ui'
-
+import '~/plugins/mint-ui'
 export default {
   components: {
     Logo

@@ -25,7 +25,8 @@ module.exports = {
   */
   css: [
     { src: '~static/reset.css' },
-    { src: 'element-ui/lib/theme-chalk/index.css' }
+    { src: 'element-ui/lib/theme-chalk/index.css' },
+    { src: 'mint-ui/lib/style.css' }
   ],
   build: {
     /*
@@ -49,9 +50,9 @@ module.exports = {
     ]
   },
   // plugins: [
-  //   { src: '~plugins/element-ui' }
+  //   { src: '~plugins/mint-ui', ssr: true }
   // ],
   vender: [
-    'element-ui', 'axios'
+    'element-ui', 'axios', 'mint-ui'
   ]
 }
