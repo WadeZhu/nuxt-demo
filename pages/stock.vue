@@ -51,11 +51,11 @@ export default {
       this.name = data.name
     },
     async updateData(value) {
-      await axios.get(`http://localhost:9933/stock/updateList`, {params: {
+      await axios.post(`http://localhost:9933/stock/updateList`, {
         name: 'Tencent',
         date: DateUtil.timeFormat(new Date()),
         price: value
-      }})
+      })
     },
     add() {
       MessageBox.prompt('请输入当前股价').then(({ value, action }) => {

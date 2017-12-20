@@ -9,14 +9,11 @@
         Nuxt.js project
       </h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        <a href="/stock">
+          <el-button type="primary">跳去股票页</el-button>
+        </a>
       </div>
     </div>
-    <a href="/stock">
-      <el-button type="primary">主要按钮</el-button>
-    </a>
-    <el-button type="primary" icon="el-icon-edit"></el-button>
   </section>
 </template>
 
