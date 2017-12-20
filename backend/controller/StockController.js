@@ -8,7 +8,12 @@ class StockController {
   }
   static async updateStock (ctx) {
     const {name, date, price} = ctx.request.query
+    console.log(ctx.req)
     await Stock.update({name}, {$push: {list: {date, price}}})
+    ctx.body = {
+      code: 0,
+      message: 'success'
+    }
   }
 }
 

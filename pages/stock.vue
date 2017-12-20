@@ -33,7 +33,7 @@ import ZwTable from '~/components/Table.vue'
 import axios from 'axios'
 import '~/plugins/mint-ui'
 import { MessageBox } from 'mint-ui'
-
+import DateUtil from '~/assets/date/index.js'
 export default {
   components: {
     ZwTable
@@ -51,15 +51,14 @@ export default {
       this.name = data.name
     },
     async updateData(value) {
-      await axios.post('http://localhost:9933/stock/updateList', {params: {
+      await axios.get(`http://localhost:9933/stock/updateList`, {params: {
         name: 'Tencent',
-        date: new Date(),
+        date: DateUtil.timeFormat(new Date()),
         price: value
       }})
     },
     add() {
       MessageBox.prompt('请输入当前股价').then(({ value, action }) => {
-        console.log(value)
         this.updateData(value)
       })
     }
